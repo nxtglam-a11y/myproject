@@ -1,10 +1,129 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Project</title>
-</head>
-<body>
-  <h1>🚀 My Website is Live</h1>
-  <p>GitHub Pages working successfully!</p>
-</body>
-</html>
+export default function ITExpertsWebsite() {
+  const services = [
+    "CCTV Installation",
+    "Laptop Repair",
+    "Networking Solutions",
+    "WiFi Setup",
+    "Server Management",
+    "Cloud Services",
+    "Printer Repair",
+    "Computer AMC",
+    "Security Solutions",
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-black text-white">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-cyan-600 via-blue-700 to-indigo-900 text-white py-24 px-6 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-6xl font-extrabold mb-6 tracking-tight drop-shadow-2xl">
+            IT Experts 🚀
+          </h1>
+          <p className="text-xl mb-8">
+            Complete IT Infrastructure, Networking, CCTV, Cloud & Security Solutions for Homes, Offices and Businesses
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            <button className="bg-white text-blue-700 px-6 py-3 rounded-2xl font-semibold shadow-lg hover:scale-105 transition">
+              Download App
+            </button>
+
+            <button className="bg-yellow-400 text-black px-6 py-3 rounded-2xl font-semibold shadow-2xl hover:scale-110 transition duration-300 border border-yellow-200">
+              24×7 IT Support
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-20 px-6 bg-gray-950">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-5xl font-bold mb-8 text-cyan-400">About IT Experts</h2>
+          <p className="text-lg text-gray-700 leading-8">
+            IT Experts provides complete technology solutions including CCTV,
+            networking, server support, laptop repair, cloud services, and IT
+            consulting. We help homes and businesses stay connected and secure.
+          </p>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="py-20 px-6 bg-black">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12">
+            Our Services
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="bg-gray-900 border border-cyan-500/20 rounded-3xl p-8 shadow-2xl hover:scale-105 hover:border-cyan-400 transition duration-300"
+              >
+                <h3 className="text-2xl font-semibold mb-4">{service}</h3>
+                <p className="text-gray-600">
+                  Professional and reliable {service.toLowerCase()} solutions.
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* App Section */}
+      <section className="py-24 px-6 bg-gradient-to-r from-indigo-900 to-cyan-700 text-white text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold mb-6">Download Our App</h2>
+          <p className="text-lg mb-8">
+            Get instant IT support and service booking directly from your phone.
+          </p>
+
+          <a
+            href="#"
+            className="inline-block bg-yellow-400 text-black px-8 py-4 rounded-2xl font-bold text-lg shadow-lg hover:scale-105 transition"
+          >
+            Download IT Experts APK
+          </a>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-5xl font-bold mb-10 text-cyan-400">Contact Us</h2>
+
+          <div className="grid md:grid-cols-3 gap-8 text-lg">
+            <div className="bg-gray-100 p-6 rounded-2xl shadow">
+              <h3 className="font-bold mb-2">📞 Phone</h3>
+              <p>+91 7987256038</p>
+            </div>
+
+            <div className="bg-gray-100 p-6 rounded-2xl shadow">
+              <h3 className="font-bold mb-2">📧 Email</h3>
+              <p>Professional IT Solutions & Support</p>
+            </div>
+
+            <div className="bg-gray-100 p-6 rounded-2xl shadow">
+              <h3 className="font-bold mb-2">📍 Location</h3>
+              <p>Madhya Pradesh, India</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black text-white py-6 text-center">
+        <p>© 2026 IT Experts. All Rights Reserved. | 24×7 Professional IT Support</p>
+      </footer>
+
+      <a
+        href="https://wa.me/917987256038"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-green-500 hover:scale-110 transition duration-300 text-white px-6 py-4 rounded-full shadow-2xl text-lg font-bold z-50"
+      >
+        WhatsApp Support
+      </a>
+    </div>
+  );
+}
