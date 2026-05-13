@@ -1,539 +1,327 @@
+# IT Experts Professional HTML Website
+
+Save this as `index.html` inside your GitHub project folder.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <title>MY IT EXPERTS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Experts</title>
 
   <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial,sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
-    html{
-      scroll-behavior:smooth;
+    body {
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
     }
 
-    body{
-      background:#020617;
-      color:white;
-      overflow-x:hidden;
+    header {
+      background: linear-gradient(135deg, #06b6d4, #1d4ed8, #312e81);
+      padding: 100px 20px;
+      text-align: center;
     }
 
-    /* HERO */
-
-    header{
-      min-height:100vh;
-      background:
-      linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
-      linear-gradient(135deg,#06b6d4,#1d4ed8,#312e81);
-
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:40px 20px;
+    header h1 {
+      font-size: 60px;
+      margin-bottom: 20px;
     }
 
-    .hero{
-      max-width:1000px;
-      animation:fadeIn 1.5s ease;
+    header p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 22px;
     }
 
-    .hero h1{
-      font-size:75px;
-      margin-bottom:20px;
-      text-shadow:0 0 20px rgba(255,255,255,0.3);
+    .buttons {
+      margin-top: 40px;
     }
 
-    .hero span{
-      color:#22d3ee;
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 30px;
+      border-radius: 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
-    .hero p{
-      font-size:24px;
-      color:#d1d5db;
-      line-height:1.8;
-      margin-bottom:40px;
+    .btn-primary {
+      background: white;
+      color: #1d4ed8;
     }
 
-    .buttons{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:20px;
+    .btn-secondary {
+      background: #facc15;
+      color: black;
     }
 
-    .btn{
-      padding:16px 35px;
-      border-radius:15px;
-      text-decoration:none;
-      font-weight:bold;
-      transition:0.3s;
-      font-size:18px;
+    .btn:hover {
+      transform: scale(1.05);
     }
 
-    .btn-primary{
-      background:white;
-      color:#1d4ed8;
+    section {
+      padding: 80px 20px;
     }
 
-    .btn-secondary{
-      background:#22c55e;
-      color:white;
+    .container {
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .btn-third{
-      background:#facc15;
-      color:black;
+    .title {
+      text-align: center;
+      font-size: 42px;
+      margin-bottom: 40px;
+      color: #22d3ee;
     }
 
-    .btn:hover{
-      transform:translateY(-5px) scale(1.05);
-      box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    .about p {
+      text-align: center;
+      font-size: 20px;
+      color: #cbd5e1;
+      max-width: 900px;
+      margin: auto;
     }
 
-    /* SECTION */
-
-    section{
-      padding:100px 20px;
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
     }
 
-    .container{
-      max-width:1200px;
-      margin:auto;
+    .card {
+      background: #111827;
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid #164e63;
+      transition: 0.3s;
     }
 
-    .title{
-      text-align:center;
-      font-size:50px;
-      margin-bottom:25px;
-      color:#22d3ee;
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: #22d3ee;
     }
 
-    .subtitle{
-      text-align:center;
-      color:#cbd5e1;
-      max-width:850px;
-      margin:auto;
-      font-size:20px;
-      line-height:1.8;
+    .card h3 {
+      margin-bottom: 15px;
+      color: #22d3ee;
     }
 
-    /* SERVICES */
-
-    .services{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:30px;
-      margin-top:60px;
+    .download {
+      text-align: center;
+      background: linear-gradient(135deg, #312e81, #0891b2);
+      border-radius: 20px;
+      padding: 60px 20px;
     }
 
-    .card{
-      background:#0f172a;
-      border:1px solid rgba(34,211,238,0.2);
-      padding:35px;
-      border-radius:25px;
-      transition:0.4s;
-      position:relative;
-      overflow:hidden;
+    .download p {
+      margin: 20px 0;
+      font-size: 20px;
     }
 
-    .card::before{
-      content:'';
-      position:absolute;
-      top:0;
-      left:-100%;
-      width:100%;
-      height:100%;
-      background:linear-gradient(
-      90deg,
-      transparent,
-      rgba(255,255,255,0.08),
-      transparent);
-
-      transition:0.6s;
+    .contact-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
     }
 
-    .card:hover::before{
-      left:100%;
+    .contact-card {
+      background: #111827;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      border: 1px solid #164e63;
     }
 
-    .card:hover{
-      transform:translateY(-12px);
-      border-color:#22d3ee;
-      box-shadow:0 20px 40px rgba(0,0,0,0.5);
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: black;
+      margin-top: 40px;
     }
 
-    .card h3{
-      color:#22d3ee;
-      margin-bottom:15px;
-      font-size:25px;
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #22c55e;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      transition: 0.3s;
     }
 
-    .card p{
-      color:#d1d5db;
-      line-height:1.7;
+    .whatsapp:hover {
+      transform: scale(1.1);
     }
 
-    /* STATS */
-
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:25px;
-      margin-top:60px;
-    }
-
-    .stat-box{
-      background:#111827;
-      text-align:center;
-      padding:40px;
-      border-radius:20px;
-      border:1px solid rgba(34,211,238,0.2);
-    }
-
-    .stat-box h2{
-      font-size:50px;
-      color:#22d3ee;
-    }
-
-    .stat-box p{
-      margin-top:10px;
-      color:#cbd5e1;
-    }
-
-    /* APP */
-
-    .download{
-      background:linear-gradient(135deg,#312e81,#0891b2);
-      border-radius:30px;
-      text-align:center;
-      padding:70px 20px;
-    }
-
-    .download p{
-      margin:25px 0;
-      color:#e5e7eb;
-      font-size:22px;
-    }
-
-    /* CONTACT */
-
-    .contact-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:30px;
-      margin-top:60px;
-    }
-
-    .contact-card{
-      background:#111827;
-      padding:35px;
-      border-radius:25px;
-      text-align:center;
-      border:1px solid rgba(34,211,238,0.2);
-      transition:0.3s;
-    }
-
-    .contact-card:hover{
-      transform:translateY(-8px);
-      border-color:#22d3ee;
-    }
-
-    .contact-card h3{
-      margin-bottom:15px;
-      color:#22d3ee;
-      font-size:24px;
-    }
-
-    /* FOOTER */
-
-    footer{
-      background:black;
-      padding:40px 20px;
-      text-align:center;
-      color:#9ca3af;
-      margin-top:50px;
-    }
-
-    /* WHATSAPP */
-
-    .whatsapp{
-      position:fixed;
-      bottom:25px;
-      right:25px;
-      background:#22c55e;
-      color:white;
-      text-decoration:none;
-      padding:18px 28px;
-      border-radius:50px;
-      font-weight:bold;
-      box-shadow:0 0 25px rgba(0,0,0,0.4);
-      z-index:999;
-      transition:0.3s;
-    }
-
-    .whatsapp:hover{
-      transform:scale(1.1);
-    }
-
-    /* ANIMATION */
-
-    @keyframes fadeIn{
-
-      from{
-        opacity:0;
-        transform:translateY(30px);
+    @media(max-width: 768px) {
+      header h1 {
+        font-size: 42px;
       }
 
-      to{
-        opacity:1;
-        transform:translateY(0);
+      .title {
+        font-size: 32px;
       }
-
     }
-
-    /* MOBILE */
-
-    @media(max-width:768px){
-
-      .hero h1{
-        font-size:48px;
-      }
-
-      .hero p{
-        font-size:19px;
-      }
-
-      .title{
-        font-size:38px;
-      }
-
-    }
-
   </style>
-
 </head>
-
 <body>
 
-  <!-- HERO -->
-
   <header>
+    <h1>IT Experts 🚀</h1>
 
-    <div class="hero">
+    <p>
+      Complete IT Infrastructure, Networking, CCTV, Cloud & Security
+      Solutions for Homes, Offices and Businesses.
+    </p>
 
-      <h1>MY <span>IT EXPERTS</span> 🚀</h1>
-
-      <p>
-
-        Professional IT Infrastructure, Networking,
-        CCTV, Web Design, App Development, Cloud,
-        Security & Technical Solutions For Homes,
-        Offices & Businesses.
-
-      </p>
-
-      <div class="buttons">
-
-        <a href="app-release.apk"
-           class="btn btn-primary"
-           download>
-
-           Download APK
-
-        </a>
-
-        <a href="https://wa.me/917987256038"
-           class="btn btn-secondary"
-           target="_blank">
-
-           WhatsApp Support
-
-        </a>
-
-        <a href="#services"
-           class="btn btn-third">
-
-           Our Services
-
-        </a>
-
-      </div>
-
+    <div class="buttons">
+      <a href="#" class="btn btn-primary">Download APK</a>
+      <a href="https://wa.me/917987256038" class="btn btn-secondary">
+        24×7 IT Support
+      </a>
     </div>
-
   </header>
 
-  <!-- ABOUT -->
-
-  <section>
-
+  <section class="about">
     <div class="container">
-
       <h2 class="title">About IT Experts</h2>
 
-      <p class="subtitle">
-
-        IT Experts delivers modern IT services including
-        networking, CCTV installation, cloud solutions,
-        laptop repair, server management, web design,
-        app development and complete technical support
-        with fast professional service.
-
+      <p>
+        IT Experts provides advanced IT support, networking,
+        CCTV installation, cloud solutions, server management,
+        laptop repair, WiFi optimization and complete business
+        technology solutions with fast professional support.
       </p>
-
-      <div class="stats">
-
-        <div class="stat-box">
-          <h2>24×7</h2>
-          <p>Support Service</p>
-        </div>
-
-        <div class="stat-box">
-          <h2>100+</h2>
-          <p>Projects Completed</p>
-        </div>
-
-        <div class="stat-box">
-          <h2>Fast</h2>
-          <p>Technical Support</p>
-        </div>
-
-        <div class="stat-box">
-          <h2>Secure</h2>
-          <p>Cloud Solutions</p>
-        </div>
-
-      </div>
-
     </div>
-
   </section>
 
-  <!-- SERVICES -->
-
-  <section id="services">
-
+  <section>
     <div class="container">
-
       <h2 class="title">Our Services</h2>
 
       <div class="services">
 
         <div class="card">
-          <h3>📹 CCTV Installation</h3>
-          <p>Professional CCTV security and monitoring setup.</p>
+          <h3>CCTV Installation</h3>
+          <p>Professional CCTV installation and security monitoring.</p>
         </div>
 
         <div class="card">
-          <h3>💻 Laptop Repair</h3>
-          <p>Advanced laptop repair and troubleshooting support.</p>
+          <h3>Laptop Repair</h3>
+          <p>Fast laptop troubleshooting and repair services.</p>
         </div>
 
         <div class="card">
-          <h3>🌐 Networking Solutions</h3>
-          <p>Office and home networking installation services.</p>
+          <h3>Networking Solutions</h3>
+          <p>Professional office and home networking setup.</p>
         </div>
 
         <div class="card">
-          <h3>📶 WiFi Setup</h3>
-          <p>High-speed WiFi setup and optimization solutions.</p>
+          <h3>WiFi Setup</h3>
+          <p>High-speed WiFi installation and optimization.</p>
         </div>
 
         <div class="card">
-          <h3>☁️ Cloud Services</h3>
-          <p>Modern cloud infrastructure and hosting support.</p>
+          <h3>Cloud Services</h3>
+          <p>Modern cloud solutions for business growth.</p>
         </div>
 
         <div class="card">
-          <h3>🖥️ Server Management</h3>
-          <p>Reliable server management and maintenance services.</p>
-        </div>
-
-        <div class="card">
-          <h3>🌍 Web Design</h3>
-          <p>Modern responsive website design for businesses.</p>
-        </div>
-
-        <div class="card">
-          <h3>📱 App Development</h3>
-          <p>Professional Android app development solutions.</p>
+          <h3>Server Management</h3>
+          <p>Secure and reliable server support services.</p>
         </div>
 
       </div>
-
     </div>
-
   </section>
 
-  <!-- APP -->
-
   <section>
-
     <div class="container download">
-
       <h2 class="title">Download Our App</h2>
 
       <p>
-
-        Get instant IT support and service booking
-        directly from your smartphone.
-
+        Get instant IT support and service booking directly from your phone.
       </p>
 
-      <a href="itexperts.apk"
-         class="btn btn-primary"
-         download>
-
-         Download IT Experts APK
-
+      <a href="#" class="btn btn-secondary">
+        Download IT Experts APK
       </a>
-
     </div>
-
   </section>
 
-  <!-- CONTACT -->
+  <section>
+    <div class="container">
+      <h2 class="title">Contact Us</h2>
+
+      <div class="contact-boxes">
+
+        <div class="contact-card">
+          <h3>📞 Phone</h3>
+          <p>+91 7987256038</p>
+        </div>
+
+        <div class="contact-card">
+          <h3>🛠️ Support</h3>
+          <p>Professional IT Solutions & Support</p>
+        </div>
+
+        <div class="contact-card">
+          <h3>📍 Location</h3>
+          <p>Madhya Pradesh, India</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 IT Experts. All Rights Reserved. | 24×7 Professional IT Support
+    <!-- TESTIMONIALS -->
 
   <section>
 
     <div class="container">
 
-      <h2 class="title">Contact Us</h2>
+      <h2 class="title">Client Reviews</h2>
 
-      <div class="contact-grid">
+      <div class="services">
 
-        <div class="contact-card">
-
-          <h3>📞 Phone</h3>
-
-          <p>+91 7987256038</p>
-
+        <div class="card">
+          <h3>⭐⭐⭐⭐⭐</h3>
+          <p>
+            Excellent CCTV installation service with fast support.
+          </p>
         </div>
 
-        <div class="contact-card">
-
-          <h3>🛠️ Support</h3>
-
-          <p>Professional IT Solutions & Technical Support</p>
-
+        <div class="card">
+          <h3>⭐⭐⭐⭐⭐</h3>
+          <p>
+            Professional networking and WiFi setup for our office.
+          </p>
         </div>
 
-        <div class="contact-card">
-
-          <h3>📍 Location</h3>
-
-          <p>Madhya Pradesh, India</p>
-
+        <div class="card">
+          <h3>⭐⭐⭐⭐⭐</h3>
+          <p>
+            Amazing app development and technical support team.
+          </p>
         </div>
 
       </div>
@@ -542,7 +330,92 @@
 
   </section>
 
-  <!-- FOOTER -->
+  <!-- BOOKING FORM -->
+
+  <section>
+
+    <div class="container download">
+
+      <h2 class="title">Book A Service</h2>
+
+      <p>
+        Fill the form and our team will contact you quickly.
+      </p>
+
+      <form>
+
+        <input type="text"
+               placeholder="Your Name"
+               style="width:100%;padding:15px;margin:10px 0;border:none;border-radius:12px;">
+
+        <input type="tel"
+               placeholder="Phone Number"
+               style="width:100%;padding:15px;margin:10px 0;border:none;border-radius:12px;">
+
+        <textarea placeholder="Your Service Requirement"
+                  style="width:100%;padding:15px;height:140px;margin:10px 0;border:none;border-radius:12px;"></textarea>
+
+        <button class="btn btn-primary" type="submit">
+          Submit Request
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- APP SCREENSHOTS -->
+
+  <section>
+
+    <div class="container">
+
+      <h2 class="title">App Screenshots</h2>
+
+      <div class="services">
+
+        <div class="card">
+          <h3>📱 Dashboard</h3>
+          <p>Modern user dashboard with fast service access.</p>
+        </div>
+
+        <div class="card">
+          <h3>🛠️ Services</h3>
+          <p>Easy service booking and technical support system.</p>
+        </div>
+
+        <div class="card">
+          <h3>⚡ Fast Support</h3>
+          <p>Quick customer support and real-time assistance.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- GOOGLE MAP -->
+
+  <section>
+
+    <div class="container">
+
+      <h2 class="title">Find Us</h2>
+
+      <iframe
+        src="https://maps.google.com/maps?q=Madhya%20Pradesh&t=&z=5&ie=UTF8&iwloc=&output=embed"
+        width="100%"
+        height="400"
+        style="border:0;border-radius:20px;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+
+    </div>
+
+  </section>
 
   <footer>
 
@@ -550,17 +423,22 @@
     All Rights Reserved.
     | Professional IT Company 🚀
 
-  </footer>
-
-  <!-- WHATSAPP -->
-
-  <a class="whatsapp"
-     href="https://wa.me/917987256038"
-     target="_blank">
-
-     WhatsApp Chat
-
+  <a
+    class="whatsapp"
+    href="https://wa.me/917987256038"
+    target="_blank"
+  >
+    WhatsApp Support
   </a>
 
 </body>
 </html>
+```
+
+After saving the file, run:
+
+```bash
+git add .
+git commit -m "professional html website"
+git push
+```
